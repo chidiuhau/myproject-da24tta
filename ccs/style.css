@@ -1,0 +1,19 @@
+table#tt {
+    border: 1px solid blue;
+    border-collapse: collapse;
+	border-radius: 10px;
+    width: 50%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+table#tt th,
+table#tt td {
+    border: 1px solid blue;
+    padding: 8px;
+    text-align: left;
+}
+
+table#tt th {
+    background-color: #e6f0ff;
+}
