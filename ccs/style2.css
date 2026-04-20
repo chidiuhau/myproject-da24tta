@@ -1,0 +1,30 @@
+*{
+    margin:0;
+    padding:0;
+}
+.container{
+    padding:10px;
+    width:450px;
+    margin:50px auto;
+    background-color: rgb(107, 230, 235);
+    border-radius: 5px;
+
+}
+form{
+    background-color: rgb(165, 246, 252);
+}
+h1#title{
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing:3px;
+    margin-top:5px;
+    text-align:center;
+}
+.control{
+    display:block;
+    padding:7px;
+    border:1px solid rgb(120, 238, 232);
+    border-radius:5px;
+    width:95%;
+    margin:5px;
+}
