@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rút Thăm May Mắn</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#141e30,#243b55);
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+}
+
+.title{
+    color:white;
+    font-size:40px;
+    margin-bottom:25px;
+}
+
+.box{
+    width:340px;
+    height:340px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    border:3px solid rgba(255,255,255,0.2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 0 30px rgba(255,215,0,0.4);
+}
+
+.icon{
+    font-size:90px;
+    animation:float 2s infinite ease-in-out;
+}
+
+.name{
+    margin-top:20px;
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+
+}
+
+button{
+    margin-top:30px;
+    padding:15px 45px;
+    border:none;
+    border-radius:50px;
+    background:gold;
+    color:black;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+\\
+}
+button:hover{
+    transform:scale(1.08);
+}
+
+
+@keyframes rotate{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="title">🎁 RÚT THĂM MAY MẮN 🎁</div>
+
+    <div class="box">
+        <div class="light"></div>
+        <div class="icon" id="icon">🎉</div>
+        <div class="name" id="name">Nhấn quay</div>
+    </div>
+
+    <button onclick="spin()">QUAY</button>
+</div>
+
+<script>
+const gifts = [
+    {icon:"📱", name:"iPhone 16"},
+    {icon:"💵", name:"500.000đ"},
+    {icon:"🛵", name:"Xe Máy"},
+    {icon:"⌚", name:"Đồng Hồ"},
+    {icon:"🎧", name:"Tai Nghe"},
+    {icon:"💻", name:"Laptop"},
+    {icon:"📺", name:"TV"},
+    {icon:"🧸", name:"Gấu Bông"},
+    {icon:"🎁", name:"Hộp Quà"},
+    {icon:"💰", name:"1.000.000đ"}
+];
+
+let spinning = false;
+
+function spin(){
+
+    if(spinning) return;
+    spinning = true;
+
+    let icon = document.getElementById("icon");
+    let name = document.getElementById("name");
+
+    let count = 0;
+
+    let effect = setInterval(()=>{
+        let random = gifts[Math.floor(Math.random()*gifts.length)];
+
+        icon.innerHTML = random.icon;
+        name.innerHTML = random.name;
+
+        count++;
+
+        if(count > 25){
+clearInterval(effect);
+
+            let finalGift = gifts[Math.floor(Math.random()*gifts.length)];
+
+            icon.innerHTML = finalGift.icon;
+            name.innerHTML = finalGift.name;
+
+            spinning = false;
+        }
+
+    },100);
+}
+</script>
+
+</body>
+</html>
